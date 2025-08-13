@@ -87,7 +87,7 @@ footer {
 
 .iframe-container {
     width: 100%; /* Set the width of the container */
-    height: 300px; /* Set the height of the scrollable area */
+    height: 100%; /* Set the height of the scrollable area */
     overflow: auto; /* Enable scrolling if content overflows */
     border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: Add a border for clarity */
 }
