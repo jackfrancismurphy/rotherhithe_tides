@@ -52,5 +52,16 @@
         <p>&copy; 2025 Jack Murphy</p>
     </footer>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const widgetContainer = document.querySelector(".iframe-container");
+
+        if (widgetContainer) {
+            // Scroll to the horizontal center of the content
+            widgetContainer.scrollLeft = (widgetContainer.scrollWidth - widgetContainer.clientWidth) / 2;
+        }
+    });
+</script>
+
 </body>
 </html>
