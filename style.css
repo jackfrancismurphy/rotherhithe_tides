@@ -4,6 +4,7 @@
   ======================================================
 */
 body {
+    height: 100%;
     margin: 0;
     font-family: 'EB Garamond', serif;
     background-color: #0c2051;
@@ -11,7 +12,9 @@ body {
 }
 
 main {
-    padding: 20px;
+    min-height: auto;
+    display: block;
+    padding: 40px 0;
 }
 
 #summary {
@@ -83,18 +86,80 @@ footer {
 */
 #widget {
     text-align: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .iframe-container {
-    width: 100%; /* Set the width of the container */
-    height: 300px; /* Set the height of the scrollable area */
-    overflow: auto; /* Enable scrolling if content overflows */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: Add a border for clarity */
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
 }
 
 .responsive-iframe {
-    width: 100%; /* Ensure the iframe fits within the container */
-    height: auto; /* Allow the iframe height to adjust */
+    display: block;
+    width: 1000px;
+    height: 500px;
+}
+
+@media screen and (max-width: 600px) {
+    #widget {
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    .iframe-container {
+        min-width: 100%;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    .responsive-iframe {
+        width: 1000px;
+        height: 500px;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 600px) and (orientation: landscape) {
+    main {
+        display: block;
+        height: auto;
+        min-height: 0;
+        padding: 16px 0;
+        overflow: visible;
+    }
+
+    #widget {
+        width: 100%;
+        margin: 12px auto 16px;
+    }
+
+    .iframe-container {
+        width: 100%;
+        height: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border: 1px solid rgba(255,255,255,0.1);
+        margin: 0 auto 20px;
+    }
+
+    .responsive-iframe {
+        display: block;
+        width: 1000px;
+        height: 500px;
+        border: 0;
+    }
+
+    .contact-section {
+        margin-top: 20px;
+        clear: both;
+    }
 }
 
 /*
@@ -107,7 +172,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 40px 80px;
-    background-color: #1f306d;;
+    background-color: #1f306d;
     color: #ffffff;
     font-family: 'EB Garamond', serif;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -153,7 +218,6 @@ footer {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-
 /*
   ======================================================
   Mobile Responsiveness
@@ -176,17 +240,5 @@ footer {
 
     .contact-subtitle {
         font-size: 1.2em;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    #widget {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-    
-    .responsive-iframe {
-        width: 800px;
-        height: 500px;
     }
 }
